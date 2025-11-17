@@ -1,12 +1,11 @@
 import React from "react"
-import { Button } from "react-native"
+import { Button, TouchableOpacity } from "react-native"
 
 type ButtonProps = {
-  title: string
-
+  children: React.ReactNode
   onPress: () => void
 }
 
-export function ButtonComponent({ title, onPress }: ButtonProps) {
-  return <Button title={title} onPress={onPress} />
+export function ButtonComponent({ children, onPress }: ButtonProps) {
+  return <TouchableOpacity onPress={onPress}>{children}</TouchableOpacity>
 }
